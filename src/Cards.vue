@@ -56,7 +56,7 @@ export default {
         filtered = this.listings.filter(x => x.fields['Title/Topic'].toLowerCase().trim().indexOf(this.searchQuery.toLowerCase().trim()) !== -1);
       }
       if(this.selectedTopics.length > 0) {
-        filtered = filtered.filter(x => x.fields.Topics && x.fields.Topics.some(r => this.selectedTopics.includes(r)));
+        filtered = filtered.filter(x => x.fields.Type && x.fields.Type.some(r => this.selectedTopics.includes(r.toLowerCase())));
       }
       return filtered;
     }
